@@ -1,4 +1,4 @@
-const Database = require('better-sqlite3')
+﻿const Database = require('better-sqlite3')
 const path = require('path')
 
 const db = new Database(path.join(__dirname, 'tradeai.db'))
@@ -100,4 +100,32 @@ if (!existingSettings) {
     VALUES (5000, 5, 10, 1, 0.75, 0.5, 'FundedNext')
   `).run()
 }
+function addMissingColumns(table, columns) {
+  const existing = db.prepare(`PRAGMA table_info(${table})`).all().map(c => c.name)
+  for (const [name, type] of Object.entries(columns)) {
+    if (!existing.includes(name)) db.exec(`ALTER TABLE ${table} ADD COLUMN ${name} ${type}`)
+  }
+}
+
+addMissingColumns('trades', {
+  charges: 'REAL DEFAULT 0',
+  net_pnl: 'REAL',
+  screenshot_path: 'TEXT'
+})
+
+addMissingColumns('backtest_trades', {
+  bias: 'TEXT',
+  session: 'TEXT',
+  planned_rr: 'REAL',
+  sl_pips: 'REAL',
+  lot: 'REAL',
+  achieved_rr: 'REAL',
+  pnl: 'REAL',
+  execution_review: 'TEXT',
+  bias_alignment: 'TEXT',
+  discipline: 'TEXT',
+  screenshot_path: 'TEXT',
+  would_take_live: 'INTEGER',
+  hindsight_bias: 'TEXT'
+})
 module.exports = db

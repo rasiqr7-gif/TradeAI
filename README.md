@@ -42,3 +42,28 @@ See backend/.env.example. Never commit a real .env file.
 
 ## Status
 Personal project, still in development.
+
+## Screenshots
+
+These screenshots use demo data, not real trades.
+
+### Dashboard
+![Dashboard](docs/dashboard.png)
+
+### Pre-trade checklist
+![Checklist](docs/checklist.png)
+
+### Journal
+![Journal](docs/journal.png)
+
+### Analysis
+![Analysis](docs/analysis.png)
+
+### Strategy
+![Strategy](docs/strategy.png)
+
+### Backtest
+![Backtest](docs/backtest.png)
+
+### Settings
+![Settings](docs/settings.png)
