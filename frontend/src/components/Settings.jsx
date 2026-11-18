@@ -11,7 +11,7 @@ export default function Settings() {
     default_risk_aplus: 1.5,
     default_risk_a: 1.0,
     default_risk_b: 0.5,
-    funded_firm: "FundedNext"
+    funded_firm: "Personal account"
   })
   const [saved, setSaved] = useState(false)
   const [loading, setLoading] = useState(true)
@@ -48,7 +48,7 @@ export default function Settings() {
       <div className="mb-6">
         <h2 className="text-[#C9A84C] text-2xl font-bold">Settings</h2>
         <p className="text-[#444444] text-sm mt-1">
-          Configure your funded account parameters
+          Configure your account and risk parameters
         </p>
       </div>
 
@@ -60,7 +60,7 @@ export default function Settings() {
 
         <div className="mb-4">
           <label className="text-[#666666] text-xs uppercase tracking-wider block mb-2">
-            Funded Firm
+            Broker / Account Name
           </label>
           <input
             name="funded_firm"
@@ -104,7 +104,7 @@ export default function Settings() {
             className="w-full bg-[#0D0D0D] border border-[#333333] rounded px-3 py-2 text-[#CCCCCC] text-sm focus:outline-none focus:border-[#C9A84C]"
           />
           <p className="text-[#333333] text-xs mt-1">
-            FundedNext standard: 5% daily
+            Your own daily loss limit: the most you accept losing in one day
           </p>
         </div>
 
@@ -121,7 +121,7 @@ export default function Settings() {
             className="w-full bg-[#0D0D0D] border border-[#333333] rounded px-3 py-2 text-[#CCCCCC] text-sm focus:outline-none focus:border-[#C9A84C]"
           />
           <p className="text-[#333333] text-xs mt-1">
-            FundedNext standard: 10% max
+            Your own maximum drawdown: the most you accept losing in total
           </p>
         </div>
       </div>

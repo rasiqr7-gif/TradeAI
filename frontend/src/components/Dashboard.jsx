@@ -221,7 +221,7 @@ export default function Dashboard() {
         <div className="text-right">
           <div className="text-[#444444] text-xs">Account</div>
           <div className="text-[#C9A84C] font-bold">${accountSize.toLocaleString()}</div>
-          <div className="text-[#444444] text-xs">{settings?.funded_firm || "FundedNext"}</div>
+          <div className="text-[#444444] text-xs">{settings?.funded_firm || "Personal account"}</div>
         </div>
       </div>
 
